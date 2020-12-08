@@ -1,13 +1,197 @@
-import React, { Component } from 'react';
+import "./Main.scss";
+import React, { Component } from "react";
 
 class Main extends Component {
-    render() {
-        return (
-            <div>
-                hello
+  constructor() {
+    super();
+    this.state = {
+      comment: "",
+      commentList: [],
+    };
+  }
+
+  getComment = (e) => {
+    this.setState({ comment: e.target.value });
+  };
+
+  addComment = (e) => {
+    e.preventDefault();
+    let arr = this.state.commentList;
+    arr.push({
+      comment: this.state.comment,
+    });
+    this.setState({ commentList: arr, comment: "" });
+  };
+
+  render() {
+    console.log(this.state);
+    return (
+      <>
+        <header className="navHeader">
+          <nav className="nav_bar">
+            <div className="nav_container">
+              <div className="nav_left">
+                <div className="nav_icon">
+                  <img
+                    src="../images/younggwang/logo.png"
+                    alt="main_logo"
+                    className="nav_logo"
+                  />
+                </div>
+                <div className="nav_titile">Westagram</div>
+              </div>
+              <div className="nav_center">
+                <img src="../images/younggwang/search.png" alt="search" id="search" />
+                <input type="text" placeholder="검색" className="search_bar" />
+              </div>
+              <div className="nav_right">
+                <div className="nav_right_imgs">
+                  <img
+                    src="../images/younggwang/explore.png"
+                    alt="explore"
+                    className="nav_right_img"
+                  />
+                  <img
+                    src="../images/younggwang/heart.png"
+                    alt="like"
+                    className="nav_right_img"
+                  />
+                  <img
+                    src="../images/younggwang/profile.png"
+                    alt="myprofile"
+                    className="nav_right_img"
+                  />
+                </div>
+              </div>
             </div>
-        );
-    }
+          </nav>
+        </header>
+        <main>
+          <div className="main_left">
+            <div className="story_container">
+              <div className="story">
+                <div className="story_picture">
+                  <img
+                    src="../images/younggwang/pangsu.jpg"
+                    alt="story-img"
+                    className="story_img"
+                  />
+                </div>
+                <div className="story_name">pengsoo</div>
+              </div>
+              <div className="story">
+                <div className="story_picture">
+                  <img
+                    src="../images/younggwang/pangsu.jpg"
+                    alt="story-img"
+                    className="story_img"
+                  />
+                </div>
+                <div className="story_name">pengsoo</div>
+              </div>
+            </div>
+            <article>
+              <div className="header_container">
+                <div className="feed_header">
+                  <div className="header_left">
+                    <div className="feed_header_imgs">
+                      <img
+                        src="../images/younggwang/face.jpeg"
+                        alt="my-img"
+                        className="feed_header_img"
+                      />
+                    </div>
+                    <p className="feed_header_name">pengsoo</p>
+                  </div>
+                  <div className="header_right">
+                    <div className="addIcon">
+                      <i className="fas fa-ellipsis-v"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="feed_fictures">
+                <img
+                  src="../images/younggwang/pang.jpeg"
+                  alt="feed-ficture"
+                  className="feed_ficture"
+                />
+              </div>
+              <div className="feed_icons">
+                <div className="feed_ions_left">
+                  <div>
+                    <img src="../images/younggwang/heart.png" alt="likeBtn" className="like" />
+                  </div>
+                  <div>
+                    <img
+                      src="../images/younggwang/speechbubble.png"
+                      alt="comment-btn"
+                      className="content"
+                    />
+                  </div>
+                  <div>
+                    <img
+                      src="../images/younggwang/direct.png"
+                      alt="direct-btn"
+                      className="comment"
+                    />
+                  </div>
+                </div>
+                <div className="feed_icons_right">
+                  <i className="far fa-bookmark"></i>
+                </div>
+              </div>
+              <dlv className="likeNum">
+                <button className="likeNum_btn">좋아요 111,111개</button>
+              </dlv>
+              <div className="feed_comments">
+                <ul className="feed_contents">
+                  <li>
+                    1<span>x</span>
+                  </li>
+                  {this.state.commentList.map((el) => (
+                    <li>
+                      {el.comment}
+                      <span>x</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="add_comment">
+                <form className="add-form" onSubmit={this.addComment}>
+                  <input
+                    type="text"
+                    placeholder="댓글 달기..."
+                    className="add_input"
+                    onChange={this.getComment}
+                    value={this.state.comment}
+                  />
+                  <div className="add-btn">
+                    <button className="add">게시</button>
+                  </div>
+                </form>
+              </div>
+            </article>
+          </div>
+          <div className="main_right">
+            <div className="main_right_avator_container">
+              <div className="main_right_avator_imgs">
+                <img
+                  src="../images/younggwang/face.jpeg"
+                  alt="face-img"
+                  className="avator_img"
+                />
+              </div>
+              <div className="avator_info">
+                <div className="main_right_avator_ids">yongjl11</div>
+                <div className="main_right_avator_names">펭수</div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </>
+    );
+  }
 }
 
 export default Main;
