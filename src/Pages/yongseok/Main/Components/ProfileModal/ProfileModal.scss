@@ -1,0 +1,39 @@
+.modal__container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.profile__modal__box {
+  position: absolute;
+  display: none;
+  top: 6%;
+  right: 16%;
+  width: 180px;
+  padding: 0;
+  border: 2px solid var(--border-color);
+  background-color: white;
+  z-index: 1;
+  &.active {
+    display: block;
+  }
+}
+
+.profile__modal__item {
+  list-style: none;
+  margin: 4px;
+  padding: 0px 8px;
+  padding-top: 4px;
+}
+
+.modal__icon {
+  font-size: 14px;
+  margin-right: 8px;
+}
+
+.profile__modal__item:last-child {
+  padding-top: 8px;
+  border-top: 1px solid var(--border-color);
+}

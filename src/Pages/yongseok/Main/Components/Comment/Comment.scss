@@ -1,0 +1,19 @@
+.comment__likeBtn,
+.comment__deleteBtn {
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.icon {
+  cursor: pointer;
+}
+
+.delete__icon:hover {
+  transform: scale(1.5);
+  color: red;
+}
+
+.like__icon {
+  color: red;
+}
