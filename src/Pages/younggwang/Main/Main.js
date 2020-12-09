@@ -1,5 +1,7 @@
 import "./Main.scss";
 import React, { Component } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBookmark, faEllipsisV } from "@fortawesome/free-solid-svg-icons";
 
 class Main extends Component {
   constructor() {
@@ -121,7 +123,7 @@ class Main extends Component {
                   </div>
                   <div className="header_right">
                     <div className="addIcon">
-                      <i className="fas fa-ellipsis-v"></i>
+                      <FontAwesomeIcon className="far" icon={faEllipsisV} />
                     </div>
                   </div>
                 </div>
@@ -154,7 +156,7 @@ class Main extends Component {
                   </div>
                 </div>
                 <div className="feed_icons_right">
-                  <i className="far fa-bookmark"></i>
+                  <FontAwesomeIcon className="far" icon={faBookmark} />
                 </div>
               </div>
               <dlv className="likeNum">
