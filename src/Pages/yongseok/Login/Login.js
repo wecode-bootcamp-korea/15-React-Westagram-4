@@ -7,8 +7,8 @@ class Login extends Component {
   constructor() {
     super();
     this.state = {
-      email: false,
-      password: false,
+      email: '',
+      password: '',
       emailValidateText: '',
       passwordValidateText: '',
       activate: false,
@@ -23,19 +23,19 @@ class Login extends Component {
     const email = this.emailRef.current.value;
     const regExp = /^[-A-Za-z0-9_]+[-A-Za-z0-9_.]*[@]{1}[-A-Za-z0-9_]+[-A-Za-z0-9_.]*[.]{1}[A-Za-z]{2,5}$/;
     if (regExp.test(email)) {
-      this.setState({ email: true, emailValidateText: '' });
+      this.setState({ email, emailValidateText: '' });
       this.state.password &&
         this.setState({ activate: true, buttonActive: false });
     } else if (email.length === 0) {
       return this.setState({
-        email: false,
+        email,
         emailValidateText: 'email을 입력해주세요😊',
         activate: false,
         buttonActive: true,
       });
     } else {
       return this.setState({
-        email: false,
+        email,
         emailValidateText: '유효하지 않은 email 입니다😭',
         activate: false,
         buttonActive: true,
@@ -47,19 +47,19 @@ class Login extends Component {
     const password = this.passwordRef.current.value;
     const regExp = /^(?=.*[a-zA-z])(?=.*[0-9])(?=.*[$`~!@$!%*#^?&\\(\\)\-_=+]).{8,16}$/;
     if (regExp.test(password)) {
-      this.setState({ password: true, passwordValidateText: '' });
+      this.setState({ password, passwordValidateText: '' });
       this.state.email &&
         this.setState({ activate: true, buttonActive: false });
     } else if (password.length === 0) {
       return this.setState({
-        password: false,
+        password,
         passwordValidateText: 'password를 입력해주세요😊',
         activate: false,
         buttonActive: true,
       });
     } else {
       return this.setState({
-        password: false,
+        password,
         passwordValidateText:
           '숫자, 영문, 특수문자 각 1자리 이상이면서 8자에서 16자 사이여야 합니다😭',
         activate: false,
@@ -78,7 +78,7 @@ class Login extends Component {
 
     return (
       <div className="Login">
-        <img src="/images/logo.png" alt="logo" className="logo" />
+        <img src="/images/yongseok/logo.png" alt="logo" className="logo" />
         <input
           type="text"
           placeholder="이메일"
@@ -95,7 +95,7 @@ class Login extends Component {
           disabled={buttonActive}
           className={activate ? 'active' : ''}
           onClick={() => {
-            this.props.history.push('/main');
+            this.props.history.push('/mainYong');
           }}
         >
           로그인

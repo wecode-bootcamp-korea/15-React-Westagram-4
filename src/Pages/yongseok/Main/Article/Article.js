@@ -53,37 +53,45 @@ class Article extends Component {
         <header className="header">
           <div className="header__wrapping">
             <img
-              src="/images/avatar.jpeg"
+              src="/images/yongseok/avatar.jpeg"
               alt="avatar"
               className="header__avatar"
             />
             <span>ys</span>
           </div>
-          <img src="/images/more.png" alt="more" className="header__more" />
+          <img
+            src="/images/yongseok/more.png"
+            alt="more"
+            className="header__more"
+          />
         </header>
-        <img src="/images/the_cat.jpeg" alt="cat" className="feed__img" />
+        <img
+          src="/images/yongseok/the_cat.jpeg"
+          alt="cat"
+          className="feed__img"
+        />
         <section>
           <div className="content__icons">
             <div className="content__icons__left">
               <img
-                src="/images/heart.png"
+                src="/images/yongseok/heart.png"
                 alt="heart"
                 className="content__icon"
               />
               <img
-                src="/images/speech-bubble.png"
+                src="/images/yongseok/speech-bubble.png"
                 alt="speech-bubble"
                 className="content__icon"
               />
               <img
-                src="/images/export.png"
+                src="/images/yongseok/export.png"
                 alt="export"
                 className="content__icon"
               />
             </div>
             <div className="content__icons__right">
               <img
-                src="/images/bookmark.png"
+                src="/images/yongseok/bookmark.png"
                 alt="bookmark"
                 className="content__icon"
               />
@@ -91,7 +99,7 @@ class Article extends Component {
           </div>
           <div className="content__like-number">
             <img
-              src="/images/avatar.jpeg"
+              src="/images/yongseok/avatar.jpeg"
               alt="avatar"
               className="content__like-number__avatar"
             />

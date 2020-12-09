@@ -7,8 +7,8 @@ class Mainright extends Component {
       <div className="Mainright">
         <header className="header-card">
           <img
-            src="/images/store.png"
-            alt="sotre"
+            src="/images/yongseok/store.png"
+            alt="store"
             className="header-card__img"
           />
           <div>
@@ -24,7 +24,7 @@ class Mainright extends Component {
           <ul className="story__user-cards">
             <li className="story__user-card">
               <img
-                src="/images/sheep.jpg"
+                src="/images/yongseok/sheep.jpg"
                 alt="avatar"
                 className="story__user-card__img"
               />
@@ -35,7 +35,7 @@ class Mainright extends Component {
             </li>
             <li className="story__user-card">
               <img
-                src="/images/tiger.jpg"
+                src="/images/yongseok/tiger.jpg"
                 alt="avatar"
                 className="story__user-card__img"
               />
@@ -46,7 +46,7 @@ class Mainright extends Component {
             </li>
             <li className="story__user-card">
               <img
-                src="/images/deer.jpg"
+                src="/images/yongseok/deer.jpg"
                 alt="avatar"
                 className="story__user-card__img"
               />
@@ -57,7 +57,7 @@ class Mainright extends Component {
             </li>
             <li className="story__user-card">
               <img
-                src="/images/bird.jpg"
+                src="/images/yongseok/bird.jpg"
                 alt="avatar"
                 className="story__user-card__img"
               />

@@ -56,10 +56,18 @@ class Nav extends Component {
               className="left__icon"
             />
           </div>
-          <img src="/images/logo.png" alt="logo" className="left__logo" />
+          <img
+            src="/images/yongseok/logo.png"
+            alt="logo"
+            className="left__logo"
+          />
         </div>
         <div className="search__img__nav__input__wrapping">
-          <img src="/images/search.png" alt="search" className="search__img" />
+          <img
+            src="/images/yongseok/search.png"
+            alt="search"
+            className="search__img"
+          />
           <input
             type="text"
             placeholder="검색"
