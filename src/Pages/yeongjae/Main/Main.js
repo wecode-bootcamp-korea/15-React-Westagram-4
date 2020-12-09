@@ -1,10 +1,46 @@
+import { faBookmark, faComment, faCompass, faHeart, faPaperPlane, faStar, faUser } from '@fortawesome/free-regular-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { Component } from 'react';
 import './Main.scss';
 
 
 
+
+
+
 class Main extends Component {
+  
+  constructor(){
+    super();
+    this.state ={
+      commentList:[],
+      commentValue:''
+    };
+  }
+
+  handleCommenmtValue = e =>{
+    this.setState({
+      commentValue: e.target.value
+    });
+  };
+
+  addComment = e =>{
+    const { commentList, commentValue } = this.state;
+    this.setState({
+      commentList:[
+        ...commentList,
+        {
+          id: commentList.length + 1,
+          commentValue: commentValue,
+          isLiked: false,
+        }
+      ],
+      commentValue: ''
+    });
+  }
   render() {
+    const activateBtn = (this.state.commentValue.length) !== 0;
+    const { commentList} = this.state;
     return (
     <div className="container">
       
@@ -12,9 +48,9 @@ class Main extends Component {
         <div className="nav_logo">westagram</div>
         <div className="nav_searchBar"><input type="search" placeholder="검색"></input></div>
         <div className="nav_item">
-          <i className="far fa-compass"></i>
-          <i className="far fa-heart"></i>
-          <i className="far fa-user"></i>
+          <FontAwesomeIcon className="far" icon={faCompass} /> 
+          <FontAwesomeIcon className="far" icon={faHeart} /> 
+          <FontAwesomeIcon className="far" icon={faUser} /> 
         </div>
       </div>
 
@@ -35,24 +71,49 @@ class Main extends Component {
                   <div className="img_id">kingyjnim</div>
                   <div className="img_ex">행복</div>
                 </div>
-                <div className="img_imo"><i class="far fa-star"></i></div>
+
+                <div className="img_imo">
+                <FontAwesomeIcon className="far" icon={faStar} /> 
+
+                </div>
             </div>
             <div className="feeds_img"><img src="images/yeongjae/ciga.png" alt="ciga" width="780" height="700"></img></div>
             <div className="feeds_imo">
-                <i className="far fa-heart"></i>
-                <i className="far fa-comment"></i>
-                <i className="far fa-paper-plane"></i>
+                <FontAwesomeIcon className="far" icon={faHeart} /> 
+                <FontAwesomeIcon className="far" icon={faComment} /> 
+                <FontAwesomeIcon className="far" icon={faPaperPlane} /> 
               <div className="feeds_imo_right">
-                <i className="far fa-bookmark"></i>
+                <FontAwesomeIcon className="far" icon={faBookmark} /> 
               </div>
             </div>
-            <div className="feeds_write"></div>
+
+
+        
+            <div className="feeds_write">
+              <ul>
+                {commentList.map((comment) =>{
+                  return(
+                    <li>
+                      <span className="yj_name">userName&nbsp;&nbsp;&nbsp;</span>
+                      {comment.commentValue}
+                    </li>
+                    )})}
+              </ul>
+            </div>
               <div className="comment">
-                <input type="text" className="add_comment" placeholder="댓글달기.."></input>
-                <button className="add_button">게시</button>
+                <input value ={this.state.commentValue}  onChange={this.handleCommenmtValue} type="text" className="add_comment" placeholder="댓글달기.."></input>
+                <button 
+                  style={{color: activateBtn ? "#0015ff" : "#b6e7fc"}}
+                  onClick={this.addComment} 
+                  className="add_button"
+                  >게시</button>
               </div>
           </div>
         </div>
+
+
+
+
 
         <div className="main_right">
           <div className="main_right_top">
