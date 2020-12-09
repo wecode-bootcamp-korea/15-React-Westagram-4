@@ -74,7 +74,6 @@ class Main extends Component {
 
                 <div className="img_imo">
                 <FontAwesomeIcon className="far" icon={faStar} /> 
-
                 </div>
             </div>
             <div className="feeds_img"><img src="images/yeongjae/ciga.png" alt="ciga" width="780" height="700"></img></div>
@@ -86,9 +85,7 @@ class Main extends Component {
                 <FontAwesomeIcon className="far" icon={faBookmark} /> 
               </div>
             </div>
-
-
-        
+       
             <div className="feeds_write">
               <ul>
                 {commentList.map((comment) =>{
@@ -110,10 +107,6 @@ class Main extends Component {
               </div>
           </div>
         </div>
-
-
-
-
 
         <div className="main_right">
           <div className="main_right_top">
