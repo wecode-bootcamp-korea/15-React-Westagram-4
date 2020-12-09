@@ -52,7 +52,6 @@ class Login extends Component {
       alert("아이디가 틀렸습니다.");
     } else {
       alert("비밀번호가 틀렸습니다.");
-      console.log(this.state.userId, this.state.userPw);
     }
   };
 

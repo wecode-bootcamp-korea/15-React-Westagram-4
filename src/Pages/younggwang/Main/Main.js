@@ -5,26 +5,42 @@ class Main extends Component {
   constructor() {
     super();
     this.state = {
-      comment: "",
       commentList: [],
+      comments : ""
     };
   }
-
+  
   getComment = (e) => {
-    this.setState({ comment: e.target.value });
+    this.setState({ comments: e.target.value });
   };
 
   addComment = (e) => {
     e.preventDefault();
-    let arr = this.state.commentList;
-    arr.push({
-      comment: this.state.comment,
-    });
-    this.setState({ commentList: arr, comment: "" });
+    const { commentList, comments} = this.state;
+    this.setState({ 
+      commentList:[
+        ...commentList,
+        {
+          id: commentList.length+1,
+          userName : 'user',
+          comments : comments,
+          isLike: false
+        }
+      ] , comments: "" });
+  };
+  
+  onRemove = (id) => {
+    this.setState({
+      commentList : 
+      this.state.commentList.filter
+      ((comment)=> comment.id !== id)
+    })
   };
 
+
   render() {
-    console.log(this.state);
+    console.log(this.state.commentList.id)
+
     return (
       <>
         <header className="navHeader">
@@ -146,15 +162,14 @@ class Main extends Component {
               </dlv>
               <div className="feed_comments">
                 <ul className="feed_contents">
-                  <li>
-                    1<span>x</span>
-                  </li>
-                  {this.state.commentList.map((el) => (
+                
+                  {this.state.commentList.map((el) => {
+                    return(
                     <li>
-                      {el.comment}
-                      <span>x</span>
+                      {el.comments}
+                      <span onClick={()=>this.onRemove(el.id)}>x</span>
                     </li>
-                  ))}
+                    )})}
                 </ul>
               </div>
               <div className="add_comment">
@@ -164,7 +179,7 @@ class Main extends Component {
                     placeholder="댓글 달기..."
                     className="add_input"
                     onChange={this.getComment}
-                    value={this.state.comment}
+                    value={this.state.comments}
                   />
                   <div className="add-btn">
                     <button className="add">게시</button>
