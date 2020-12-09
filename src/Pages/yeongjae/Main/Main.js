@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './Main.scss';
 
+
+
 class Main extends Component {
   render() {
     return (
@@ -20,7 +22,7 @@ class Main extends Component {
         <div className="main_left">
           <div className="left_top">
             <div className="story_one">
-              <img src="imgs/yj.png" alt="#" width="85" height="85"></img>
+              <img src="images/yeongjae/yj.png" alt="#" width="85" height="85"></img>
             </div>
             <div className="story_name">
               <span>yjnim</span>
@@ -28,14 +30,14 @@ class Main extends Component {
           </div>
           <div className="feeds">
             <div className="feeds_top">
-              <img src="imgs/yj.png" alt="#" width="65" height="65"></img>
+              <img src="images/yeongjae/yj.png" alt="#" width="65" height="65"></img>
                 <div className="feeds_top_left">
                   <div className="img_id">kingyjnim</div>
                   <div className="img_ex">행복</div>
                 </div>
                 <div className="img_imo"><i class="far fa-star"></i></div>
             </div>
-            <div className="feeds_img"><img src="imgs/ciga.png" alt="ciga" width="780" height="700"></img></div>
+            <div className="feeds_img"><img src="images/yeongjae/ciga.png" alt="ciga" width="780" height="700"></img></div>
             <div className="feeds_imo">
                 <i className="far fa-heart"></i>
                 <i className="far fa-comment"></i>
@@ -55,7 +57,7 @@ class Main extends Component {
         <div className="main_right">
           <div className="main_right_top">
             <div className="main_right_top_img">
-              <img src="imgs/yj.png" alt="#" width="85" height="85"></img>
+              <img src="images/yeongjae/yj.png" alt="#" width="85" height="85"></img>
             </div>
               <div className="main_right_top_name">
                 <div>kimgyjnim</div>
