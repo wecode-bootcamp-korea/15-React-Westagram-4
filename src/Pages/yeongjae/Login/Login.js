@@ -10,23 +10,22 @@ class Login extends React.Component{
 			id:"",
 			password:"",
 			hiddenPW:true,
-			producList:[],
 		};
 	}
-	//id---로그인 기능
+
 	handleIdChange = (e) => {
-		this.setState({id:e.target.value});
+		this.setState({ id:e.target.value });
 	};
-	//pw---로그인 기능
+
 	handlePasswordChange=(e) => {
-		this.setState({password: e.target.value});
+		this.setState({ password: e.target.value });
 	};
 	
 	checkValidation = (e) => {
 		e.preventDefault();
-		const { id, password} = this.state;
+		const { id, password } = this.state;
 		if(id.includes ("@") && password.length >= 4){
-			window.location.href='http://localhost:3000/main'
+			this.props.history.push("/main");
 		}
 		if(!id.includes("@")){
 			alert("id는 @ 필요합니다");
@@ -36,25 +35,8 @@ class Login extends React.Component{
 		}
 	}
 
-	//show password --> 비밀번호 보여주기
-	// showPassword = () =>{
-	// 	//toggle식 true <->false
-	// 	this.setState({hiddenPW: !this.state.hiddenPW});
-	// }
-	
-	//15~22줄 심화 버전
-	// handleInputValueChange = (e) => {
-	// 	//구조분해 할당 = 비구조화
-	// 	const [id, value] = e.target;
-	// 	this.setState({[id] : value})
-	// };
-
-
   render(){
-
-		// console.log("아이디", this.state.id, "pwd", this.state.password);
-		const activateBtn = 
-			(this.state.id.length && this.state.password.length) !== 0;
+		const isButtonActive = (this.state.id.length && this.state.password.length)
 		return(
 				<div className="super_log_main">
 					<div className="header_log">westagram</div>
@@ -64,22 +46,16 @@ class Login extends React.Component{
 								id="id" 
 								type="text" 
 								placeholder="&nbsp;&nbsp;&nbsp;전화번호,사용자 이름 또는 이메일" 
-								// value={id} 
 								onChange={this.handleIdChange}
 							/>				  
 						</div>
 						<div className="log_te_pw">
 							<input 
 								id="password" 
-								type={this.state.hiddenPW ? "password" : "text"}
+								type="password"
 								placeholder="&nbsp;&nbsp;&nbsp;비밀번호" 
-								// value={password}
 								onChange={this.handlePasswordChange}
 							/>  
-							{/* show // hide */}
-							{/* <span className="showPw" onClick={this.showPassword}>Show
-								{this.state.hiddenPW ? "Show" ! "Hide"}
-							</span> */}
 						</div>
 					
 						<div className="log_page_main_btn">
@@ -89,7 +65,7 @@ class Login extends React.Component{
 									type="button" 
 									id="btn"
 									style={{
-										backgroundColor: activateBtn ? "#045cb5" : "#9ebbe6"
+										backgroundColor: isButtonActive ? "#045cb5" : "#9ebbe6"
 									}}
 									onClick={this.checkValidation}
 									>로그인</button>

@@ -31,16 +31,15 @@ class Main extends Component {
         ...commentList,
         {
           id: commentList.length + 1,
-          commentValue: commentValue,
-          isLiked: false,
+          commentValue,
         }
       ],
       commentValue: ''
     });
   }
   render() {
-    const activateBtn = (this.state.commentValue.length) !== 0;
-    const { commentList} = this.state;
+    const isButtonActive = (this.state.commentValue.length) !== 0;
+    const { commentList } = this.state;
     return (
     <div className="container">
       
@@ -100,7 +99,7 @@ class Main extends Component {
               <div className="comment">
                 <input value ={this.state.commentValue}  onChange={this.handleCommenmtValue} type="text" className="add_comment" placeholder="댓글달기.."></input>
                 <button 
-                  style={{color: activateBtn ? "#0015ff" : "#b6e7fc"}}
+                  style={{color: isButtonActive ? "#0015ff" : "#b6e7fc"}}
                   onClick={this.addComment} 
                   className="add_button"
                   >게시</button>
