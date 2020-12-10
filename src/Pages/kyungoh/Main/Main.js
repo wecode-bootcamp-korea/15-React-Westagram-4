@@ -43,13 +43,7 @@ class MainOh extends React.Component{
         });
       });
   }
-
     render(){
-
-        console.log(this.state.comment);
-        console.log(this.state.commentsArr);
-        console.log(this.state.commentsData);
-
         return(
             <div className="Main">
                 <nav>

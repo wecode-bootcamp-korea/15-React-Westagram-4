@@ -3,8 +3,6 @@ import React from 'react';
 class Comments extends React.Component{
 
     render(){
-        
-        console.log(this.props.commentsList);
         const {commentsList, commentsData} = this.props;
         return(
             <ul className="commentsList">

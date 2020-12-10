@@ -16,10 +16,10 @@
     .boxes{
         display: flex;
         flex-flow: column wrap;
+        position: relative;
         width: 100%;
         margin: 20px auto;
         padding: 50px 0;
-        position: relative;
 
         input{
             padding:15px;
@@ -55,7 +55,6 @@
     }
     
     .forgotpw{
-
         display: block;
         width: 100%;
         font-size: 15px;
@@ -64,9 +63,3 @@
         color: darkblue;
     }
 }
-
-
-
-
-
-
