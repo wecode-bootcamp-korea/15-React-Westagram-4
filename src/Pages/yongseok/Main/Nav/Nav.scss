@@ -1,0 +1,87 @@
+@import '../../Common.scss';
+
+.Nav {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 78px;
+
+  .left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .left__iconbox {
+      width: 46px;
+      margin-right: 7px;
+      border-right: 2px solid black;
+      text-align: center;
+
+      .left__icon {
+        width: 22px;
+        vertical-align: middle;
+      }
+    }
+
+    .left__logo {
+      width: 103px;
+      height: 29px;
+    }
+  }
+
+  .search__img__nav__input__wrapping {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    z-index: 1;
+
+    img {
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      top: 8px;
+      left: 26px;
+    }
+
+    input {
+      width: 215px;
+      height: 28px;
+      border: 2px solid $border-color;
+      padding-left: 24px;
+    }
+
+    .search__modal__box {
+      position: absolute;
+      display: none;
+      top: 24px;
+      height: 148px;
+      width: 230px;
+      padding: 0;
+      border: 2px solid $border-color;
+      background-color: white;
+      z-index: 1;
+      overflow-y: auto;
+
+      &.showing {
+        display: block;
+      }
+    }
+  }
+
+  .right {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 222px;
+
+    img {
+      width: 22px;
+
+      cursor: pointer;
+      z-index: 1;
+    }
+  }
+}

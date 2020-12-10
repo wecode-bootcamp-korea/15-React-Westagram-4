@@ -1,0 +1,59 @@
+@import '../../Common.scss';
+
+.Mainright {
+  width: 20%;
+  height: 70%;
+  margin-top: 32px;
+  background-color: $bg-color;
+
+  .header-card {
+    display: flex;
+    align-items: center;
+
+    .header-card__img {
+      width: 48px;
+      border-radius: 50%;
+      margin-right: 12px;
+    }
+
+    div {
+      .header-card__title {
+        font-weight: 700;
+      }
+
+      .header-card__title-detail {
+        color: $font-color-faint;
+      }
+    }
+  }
+
+  .story {
+    width: 90%;
+    height: 40%;
+    margin-top: 12px;
+    padding: 0 12px;
+    background-color: white;
+    border: 2px solid $border-color;
+    overflow-y: auto;
+
+    .story__header {
+      display: flex;
+      justify-content: space-between;
+      padding: 16px 4px;
+      font-size: 14px;
+
+      .story__header__title {
+        color: $font-color-faint;
+      }
+
+      .story__header__menu {
+        font-weight: 700;
+      }
+    }
+
+    .story__user-cards {
+      margin: 0;
+      padding: 0 4px;
+    }
+  }
+}
