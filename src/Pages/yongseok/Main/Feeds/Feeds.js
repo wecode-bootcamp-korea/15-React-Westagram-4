@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Article from '../Article/Article';
+import Feed from '../Feed/Feed';
 import './Feeds.scss';
 
 class Feeds extends Component {
@@ -7,7 +7,7 @@ class Feeds extends Component {
     return (
       <>
         <div className="Feeds">
-          <Article />
+          <Feed />
         </div>
       </>
     );

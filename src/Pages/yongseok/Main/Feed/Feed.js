@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import Comment from '../Components/Comment/Comment';
-import './Article.scss';
+import './Feed.scss';
 
 let NUM = 10;
 
-class Article extends Component {
+class Feed extends Component {
   constructor() {
     super();
     this.state = { comments: [] };
@@ -17,7 +17,7 @@ class Article extends Component {
       if (e.key === 'Enter' || e.target.className === 'comment__button') {
         const comments = [
           ...this.state.comments,
-          { id: Date.now(), text: value, like: false },
+          { id: `${Date.now()}${value}`, text: value, like: false },
         ];
         this.setState({ comments });
         this.inputRef.current.value = '';
@@ -53,54 +53,41 @@ class Article extends Component {
         <header className="header">
           <div className="header__wrapping">
             <img
-              src="/images/yongseok/avatar.jpeg"
               alt="avatar"
+              src="/images/yongseok/avatar.jpeg"
               className="header__avatar"
             />
             <span>ys</span>
           </div>
           <img
-            src="/images/yongseok/more.png"
             alt="more"
+            src="/images/yongseok/more.png"
             className="header__more"
           />
         </header>
         <img
-          src="/images/yongseok/the_cat.jpeg"
           alt="cat"
+          src="/images/yongseok/the_cat.jpeg"
           className="feed__img"
         />
         <section>
           <div className="content__icons">
-            <div className="content__icons__left">
+            <div className="left">
+              <img alt="heart" src="/images/yongseok/heart.png" />
               <img
-                src="/images/yongseok/heart.png"
-                alt="heart"
-                className="content__icon"
-              />
-              <img
-                src="/images/yongseok/speech-bubble.png"
                 alt="speech-bubble"
-                className="content__icon"
+                src="/images/yongseok/speech-bubble.png"
               />
-              <img
-                src="/images/yongseok/export.png"
-                alt="export"
-                className="content__icon"
-              />
+              <img alt="export" src="/images/yongseok/export.png" />
             </div>
-            <div className="content__icons__right">
-              <img
-                src="/images/yongseok/bookmark.png"
-                alt="bookmark"
-                className="content__icon"
-              />
+            <div className="right">
+              <img alt="bookmark" src="/images/yongseok/bookmark.png" />
             </div>
           </div>
           <div className="content__like-number">
             <img
-              src="/images/yongseok/avatar.jpeg"
               alt="avatar"
+              src="/images/yongseok/avatar.jpeg"
               className="content__like-number__avatar"
             />
             <p className="content__like-number__text">
@@ -145,4 +132,4 @@ class Article extends Component {
   }
 }
 
-export default Article;
+export default Feed;

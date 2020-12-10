@@ -7,27 +7,25 @@ class Nav extends Component {
   constructor() {
     super();
     this.state = {
-      dummyData: [],
+      statusMessage: [],
       filterData: [],
       searchModalShowing: false,
     };
   }
 
   componentDidMount() {
-    fetch('http://localhost:3000/data/data.json', {
-      method: 'GET',
-    })
+    fetch('http://localhost:3000/data/data.json')
       .then(res => res.json())
       .then(res => {
         this.setState({
-          dummyData: res.data,
+          statusMessage: res.data,
         });
       });
   }
 
   handleFindSearchId = e => {
-    const matchValue = this.state.dummyData.filter(x => {
-      if (e.target.value === '') {
+    const matchValue = this.state.statusMessage.filter(x => {
+      if (!e.target.value) {
         this.setState({ searchModalShowing: false });
       } else {
         return x.id.indexOf(e.target.value) !== -1;
@@ -36,7 +34,7 @@ class Nav extends Component {
     this.setState({ filterData: matchValue });
     if (matchValue.length !== 0) {
       this.setState({ searchModalShowing: true });
-    } else if (e.target.value === '') {
+    } else if (!e.target.value) {
       this.setState({ searchModalShowing: false });
     } else {
       const notFound = [{ id: null, description: '값이 없습니다!' }];
@@ -46,26 +44,28 @@ class Nav extends Component {
   };
 
   render() {
+    const { searchModalShowing, filterData } = this.state;
+    const modalBox = 'search__modal__box';
     return (
       <nav className="Nav">
         <div className="left">
           <div className="left__iconbox">
             <img
-              src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/logo.png"
               alt="icon"
+              src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/logo.png"
               className="left__icon"
             />
           </div>
           <img
-            src="/images/yongseok/logo.png"
             alt="logo"
+            src="/images/yongseok/logo.png"
             className="left__logo"
           />
         </div>
         <div className="search__img__nav__input__wrapping">
           <img
-            src="/images/yongseok/search.png"
             alt="search"
+            src="/images/yongseok/search.png"
             className="search__img"
           />
           <input
@@ -74,30 +74,24 @@ class Nav extends Component {
             className="nav__input"
             onChange={this.handleFindSearchId}
           />
-          <ul
-            className={
-              this.state.searchModalShowing
-                ? 'search__modal__box showing'
-                : 'search__modal__box'
-            }
-          >
-            {this.state.filterData.map(item => {
+          <ul className={searchModalShowing ? `${modalBox} showing` : modalBox}>
+            {filterData.map(item => {
               return <SearchModal key={item.id} item={item} />;
             })}
           </ul>
         </div>
         <div className="right">
           <img
-            src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/explore.png"
             alt="explore"
+            src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/explore.png"
           />
           <img
-            src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png"
             alt="heart"
+            src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png"
           />
           <img
-            src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/profile.png"
             alt="profile"
+            src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/profile.png"
             className="profile__icon"
             onClick={this.props.handleModalToggle}
           />

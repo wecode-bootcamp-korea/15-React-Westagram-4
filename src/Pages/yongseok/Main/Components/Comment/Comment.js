@@ -21,6 +21,7 @@ class Comment extends Component {
 
   render() {
     const { like, text } = this.props.comment;
+    const commentLikeBtn = 'comment__likeBtn';
     return (
       <li className="comment__row" ref={this.liRef}>
         <div className="comment">
@@ -30,9 +31,7 @@ class Comment extends Component {
           </div>
           <div className="comment__right">
             <button
-              className={
-                like ? 'comment__likeBtn like__icon' : 'comment__likeBtn'
-              }
+              className={like ? `${commentLikeBtn} like__icon` : commentLikeBtn}
               onClick={this.handleLikeBtn}
             >
               <i className="fas fa-heart icon"></i>

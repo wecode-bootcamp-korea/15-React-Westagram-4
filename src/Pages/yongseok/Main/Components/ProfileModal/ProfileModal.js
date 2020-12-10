@@ -3,14 +3,12 @@ import './ProfileModal.scss';
 
 class ProfileModal extends Component {
   render() {
+    const { handleModalDelete, modalState } = this.props;
+    const profileModal = 'profile profile__modal__box';
     return (
-      <div className="modal__container" onClick={this.props.handleModalDelete}>
+      <div className="modal__container" onClick={handleModalDelete}>
         <ul
-          className={
-            this.props.modalState.none
-              ? 'profile profile__modal__box'
-              : 'profile profile__modal__box active'
-          }
+          className={modalState.none ? profileModal : `${profileModal} active`}
         >
           <li className="profile profile__modal__item">
             <i className="profile far fa-user-circle fa-fw modal__icon"></i>

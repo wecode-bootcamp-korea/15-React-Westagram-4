@@ -1,6 +1,8 @@
+@import '../../Common.scss';
+
 .Mainpart {
   display: flex;
   justify-content: center;
-  background-color: var(--bg-color);
-  border-top: 2px solid var(--border-color);
+  background-color: $bg-color;
+  border-top: 2px solid $border-color;
 }

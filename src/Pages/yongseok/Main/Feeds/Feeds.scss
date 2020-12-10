@@ -1,4 +1,6 @@
+@import '../../Common.scss';
+
 .Feeds {
   width: 50%;
-  background-color: var(--bg-color);
+  background-color: $bg-color;
 }

@@ -1,18 +1,23 @@
+@import '../../Common.scss';
+
 .Article {
   position: relative;
   width: 90%;
   margin: auto;
   margin-top: 32px;
   background-color: #ffffff;
-  border: 2px solid var(--border-color);
+  border: 2px solid $border-color;
+
   .header {
     display: flex;
     justify-content: space-between;
     padding: 12px;
+
     .header__wrapping {
       display: flex;
       align-items: center;
       justify-content: center;
+
       .header__avatar {
         width: 32px;
         height: 32px;
@@ -20,54 +25,65 @@
         border-radius: 50%;
       }
     }
+
     .header__more {
       width: 18px;
       object-fit: contain;
     }
   }
+
   .feed__img {
     width: 100%;
     height: 420px;
     object-fit: cover;
   }
+
   section {
     padding: 0 12px;
+
     .content__icons {
       display: flex;
       justify-content: space-between;
       margin-top: 8px;
-      .content__icons__left {
-        .content__icon {
+
+      .left {
+        img {
           width: 22px;
           margin: 0 8px;
         }
       }
-      .content__icons__right {
-        .content__icon {
+
+      .right {
+        img {
           width: 22px;
           margin: 0 8px;
         }
       }
     }
+
     .content__like-number {
       display: flex;
       align-items: center;
+
       .content__like-number__avatar {
         width: 26px;
         height: 26px;
         border-radius: 50%;
       }
+
       .content__like-number__text {
         margin: 16px 12px;
       }
     }
   }
+
   .comments {
     height: 100px;
     margin: 4px 0;
     padding: 0;
     list-style: none;
     overflow-y: auto;
+
     .comment__row {
       .comment {
         display: flex;
@@ -77,18 +93,21 @@
       }
     }
   }
+
   .comment__wrapping {
     height: 48px;
+
     .comment__input {
       position: absolute;
       bottom: 0;
       width: 90%;
       height: 45px;
       border: none;
-      border-top: 2px solid var(--border-color);
+      border-top: 2px solid $border-color;
       padding-left: 12px;
       outline: none;
     }
+
     .comment__button {
       position: absolute;
       bottom: 0;
@@ -97,7 +116,7 @@
       height: 45px;
       border: none;
       background-color: white;
-      border-top: 2px solid var(--border-color);
+      border-top: 2px solid $border-color;
       color: #cde5fc;
       outline: none;
       cursor: pointer;

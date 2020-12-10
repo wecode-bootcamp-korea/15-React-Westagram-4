@@ -1,15 +1,4 @@
-html,
-body {
-  background-color: var(--bg-color);
-}
-
-* {
-  box-sizing: border-box;
-}
-
-:root {
-  --bg-color: #fafafa;
-  --border-color: #e6e6e6;
-  --font-weight: 700;
-  --font-color-faint: #9e9e9e;
-}
+$bg-color: #fafafa;
+$border-color: #e6e6e6;
+$font-weight: 700;
+$font-color-faint: #9e9e9e;

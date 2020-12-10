@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
-import '../Common.scss';
 import './Login.scss';
+import '../Common.scss';
+import '../reset.scss';
 
 class Login extends Component {
   constructor() {
@@ -19,6 +20,10 @@ class Login extends Component {
     this.passwordRef = React.createRef();
   }
 
+  componentDidMount() {
+    document.title = 'Ys Login';
+  }
+
   handleEmailValidate = () => {
     const email = this.emailRef.current.value;
     const regExp = /^[-A-Za-z0-9_]+[-A-Za-z0-9_.]*[@]{1}[-A-Za-z0-9_]+[-A-Za-z0-9_.]*[.]{1}[A-Za-z]{2,5}$/;
@@ -26,7 +31,7 @@ class Login extends Component {
       this.setState({ email, emailValidateText: '' });
       this.state.password &&
         this.setState({ activate: true, buttonActive: false });
-    } else if (email.length === 0) {
+    } else if (!email) {
       return this.setState({
         email,
         emailValidateText: 'email을 입력해주세요😊',
@@ -102,9 +107,7 @@ class Login extends Component {
         </button>
         <span>{emailValidateText}</span>
         <span>{passwordValidateText}</span>
-        <a href="#">
-          <span>비밀번호를 잊으셨나요?</span>
-        </a>
+        <span className="find__password">비밀번호를 잊으셨나요?</span>
       </div>
     );
   }
