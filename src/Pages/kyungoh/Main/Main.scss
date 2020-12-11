@@ -2,7 +2,7 @@ nav{
     display: flex;
     width: 100%;
     justify-content: space-around;
-    border-bottom: 1px solid lightgray;
+    border-bottom: 1px solid gray;
     padding: 10px;
 
     .top-left{
@@ -23,7 +23,7 @@ nav{
     .top-center{
         input{
             text-align: center;
-            border: 1px solid lightgray;
+            border: 1px solid gray;
             background-color: #fafafa;
             margin-top: 5px;
         }
@@ -46,14 +46,14 @@ main{
     .feeds{
         article{
             width: 600px;
-            border: 1px solid lightgray;
+            border: 1px solid gray;
         
             .feedstop{
-                border: 1px solid lightgray;
+                border: 1px solid gray;
             
                 .smilepepe{
                     width: 20px;
-                    border: 1px solid lightgray;
+                    border: 1px solid gray;
                     border-radius: 100px;
                     margin-top: 3px;
                     margin-left: 5px;
@@ -104,26 +104,25 @@ main{
                     }
 
                 .inputandbtn{
-                    display: flex;
-                    justify-content: space-between;
-                    border-top: 1px solid lightgray;
+                        display: flex;
+                        justify-content: space-between;
+                        border-top: 1px solid gray;
 
-                    input{
-                        width: 100%;               
-                        background-color: #fafafa;
-                        padding: 10px;
-                        border: 1px none;
-                    }
-                    
-                    button{
-                        width: 60px;
-                        color: blue;
-                        opacity: 0.8;
-                        background-color: #fafafa; 
-                        border: 1px;
-                    }
-                }        
-                   
+                        input{
+                            width: 100%;               
+                            background-color: #fafafa;
+                            padding: 10px;
+                            border: 1px none;
+                        }
+                        
+                        button{
+                            width: 60px;
+                            color: blue;
+                            opacity: 0.8;
+                            background-color: #fafafa; 
+                            border: 1px;
+                        }
+                    }                   
                 }
             }       
         }
@@ -138,7 +137,7 @@ main{
 
                 .kidpepe{
                     width: 60px;
-                    border: 1px solid lightgray;
+                    border: 1px solid gray;
                     border-radius: 50%;
                     margin-right: 0;
                 }
@@ -147,11 +146,10 @@ main{
                     list-style: none;
                     font-size: 15px;
                 }
-           
             }
                    
             .story{
-                border: 1px solid lightgray;
+                border: 1px solid gray;
                 padding: 10px;
                 margin-top: 15px;
             
@@ -161,32 +159,36 @@ main{
                     justify-content: space-between;
                 }
                 
-                .storydiv{
-                    display: flex;
+                .storydiv{                 
                     padding: 10px;
-            
-                    img{
-                        width: 40px;
-                        border: 1px solid red;
-                        border-radius: 50%;
-                        padding: 3px;
-                    }
-
-                    .nicktime{
+                    list-style: none;
+        
+                    li{
                         display: flex;
-                        flex-direction: column;
-                        padding: 7px 12px;
-                        font-size: 12px;
+                        padding: 10px;
 
-                        .time{
-                            color: lightgray;
+                        img{
+                            width: 40px;
+                            border: 1px solid red;
+                            border-radius: 50%;
+                            padding: 3px;
                         }
+                        .nicktime{
+                            display: flex;
+                            flex-direction: column;
+                            padding: 7px 12px;
+                            font-size: 12px;
+    
+                            .time{
+                                color: gray;
+                            }
+                        }        
                     }
                 }
             }           
             
             .recom{
-                border: 1px solid lightgray;
+                border: 1px solid gray;
                 padding: 10px;
                 margin-top: 15px;
             
@@ -195,44 +197,36 @@ main{
                     display: flex;
                     justify-content: space-between;
                 }
-            
-                .recomdiv{
-                    display: flex;
-                    justify-content: space-around;
-                    padding: 10px;
-            
-                    img{
-                        width: 40px;
-                        border: 1px solid none;
-                        border-radius: 50%;
-                    }
 
-                    .recomfr{
-                        display: flex;
-                        flex-direction: column;
-                        padding: 7px 12px;
-                        font-size: 12px;           
-                    }
-            
-                    button{
-                        width: 60px;
-                        color: rgb(55, 155, 235);
-                        background-color: #fafafa; 
-                        border: 1px;
-                    } 
+                 .recomdiv{
+                         display: flex;
+                         justify-content: space-around;
+                         padding: 10px;
+
+                         img{
+                                width: 40px;
+                                border: 1px solid none;
+                                border-radius: 50%;
+                            }
+
+                         .recomfr{
+                                display: flex;
+                                flex-direction: column;
+                                padding: 7px 12px;
+                                font-size: 12px;  
+                              
+                                .time{
+                                    color: gray;
+                                }
+                            }
                     
-                    
-                }   
+                        button{
+                                width: 60px;
+                                color: rgb(55, 155, 235);
+                                background-color: #fafafa; 
+                                border: 1px;
+                            } 
+                        }
             }
         }
 }
-
-
-
-
-
-
-
-
-
-
