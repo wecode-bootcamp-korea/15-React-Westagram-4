@@ -2,7 +2,7 @@ import React from 'react';
 import './Login.scss';
 import { withRouter } from 'react-router-dom';
 
-
+const API = "http://3.35.19.3:8000/account/signup";
 
 class LoginOh extends React.Component{
 
@@ -33,15 +33,33 @@ class LoginOh extends React.Component{
        const checkId = id.includes("@");
        const checkPw = password.length>=4;
        if(checkId&&checkPw){
-        this.props.history.push('/main');
+           this.handleClick();
        }
        if(!checkId){
            alert("아이디에 @를 포함해주세요");
        }
        if(!checkPw){
-           alert("비밀번호는 4자리 이상으로")
+           alert("비밀번호는 4자리 이상으로");
        }
    }
+
+   handleClick = () => {
+        fetch(API, {
+            method: "POST",
+            body: JSON.stringify({
+                email: this.state.id,
+                password: this.state.password,
+            })
+        })
+        .then((res)=>res.json)
+        .then((res)=> {
+            if(res.Authorization){
+                localStorage.setItem("token", res.Authorization.value); //토큰 이름은 합의된 이름으로
+                alert('성공');
+                this.props.history.push('/main');
+            }
+        });
+    }
     render(){
         const {id, password, hidePw} = this.state;
         const activateBtn=(id.length&&password.length>0);
@@ -52,7 +70,7 @@ class LoginOh extends React.Component{
                     <input type="text" placeholder="전화번호, 사용자 이름 또는 이메일" className="id" value={id} onChange={this.handleChange}/>
                     <input type={this.state.hidePw ? "password":"text"} placeholder="비밀번호" id="password" value={password} onChange={this.handleChange}/>
                     <span className="hidePw" onClick={this.showPw}>{hidePw ? "show" : "hide"}</span>
-                    <button className={activateBtn ? "activate" : ""} onClick={this.goToMain} >로그인</button>
+                    <button className={activateBtn ? "activate" : ""} onClick={this.goToMain} >로그인/회원가입</button>
                 </div>
                 <span className="forgotpw">비밀번호를 잊으셨나요?</span>
              </div>
