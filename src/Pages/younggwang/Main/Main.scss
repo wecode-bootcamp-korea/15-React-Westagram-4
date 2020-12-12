@@ -1,0 +1,278 @@
+* {
+  box-sizing: border-box;
+}
+
+button {
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.navHeader {
+  position: fixed;
+  top: 0px;
+  background-color: #fff;
+  height: 54px;
+  width: 100%;
+  border-bottom: 1px solid lightgray;
+
+  nav {
+    margin: 0 auto;
+    width: 910px;
+    margin: 0, auto;
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+
+      div {
+        margin-left: 20px;
+        display: flex;
+        align-items: center;
+
+        img {
+          height: 22px;
+          width: 22px;
+        }
+
+        div {
+          font-size: 22px;
+          font-family: "Lobster", cursive;
+          margin-left: 30px;
+        }
+      }
+      .center {
+        display: flex;
+        align-items: center;
+        position: relative;
+
+        img {
+          height: 15px;
+          position: absolute;
+          left: 50px;
+        }
+
+        input {
+          text-align: center;
+          border: 1px solid lightgray;
+          border-radius: 5px;
+          outline: none;
+          width: 164px;
+          height: 22px;
+        }
+      }
+      .right {
+        align-items: center;
+        display: flex;
+        padding-right: 24px;
+
+        .nav_right_imgs {
+          width: 198px;
+          display: flex;
+          justify-content: space-around;
+        }
+
+        .nav_right_img {
+          width: 22px;
+          height: 22px;
+        }
+      }
+    }
+  }
+}
+
+main {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  .main_left {
+    width: 614px;
+    height: 893px;
+  }
+
+  .story_container {
+    border: 1px solid #bdbbbb;
+    height: 100px;
+    width: 612px;
+    padding: 16px, 0px;
+    display: flex;
+    margin-bottom: 15px;
+    align-items: center;
+    border-radius: 3px;
+    div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 72px;
+      padding-left: 4px;
+      padding-right: 4px;
+      div {
+        img {
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+          margin-left: 10px;
+        }
+        div {
+          padding: 5px;
+          height: 14px;
+          font-size: 10px;
+        }
+      }
+    }
+  }
+
+  article {
+    width: 614px;
+    border: 1px solid lightgray;
+  }
+
+  .header_container {
+    width: 614px;
+    height: 64px;
+    display: flex;
+    justify-content: space-between;
+    div {
+      .header_left {
+        padding: 16px;
+        display: flex;
+
+        img {
+          height: 32px;
+          width: 32px;
+          border-radius: 50%;
+          border: 1px solid lightgray;
+        }
+
+        p {
+          font-size: 15px;
+          margin-left: 10px;
+          margin-top: 9px;
+        }
+      }
+    }
+  }
+  .feed_ficture {
+    height: 612px;
+    width: 612px;
+  }
+
+  .feed_icons {
+    display: flex;
+    justify-content: space-between;
+
+    div {
+      display: flex;
+
+      .like,
+      .content {
+        height: 40px;
+        width: 40px;
+        padding: 8px;
+      }
+      .comment {
+        height: 43px;
+        width: 43px;
+        padding-bottom: 5px;
+      }
+    }
+
+    .feed_icons_right {
+      margin-right: 10px;
+      display: flex;
+      align-items: center;
+
+      .far {
+        font-size: 25px;
+        font-weight: 100;
+      }
+    }
+  }
+
+  .likeNum {
+    height: 18px;
+
+    button {
+      text-align: center;
+      font-size: 12px;
+      height: 18px;
+      width: 120px;
+      outline: none;
+      border: none;
+      font-weight: 600;
+    }
+  }
+  .feed_comments {
+    position: relative;
+    ul {
+      margin-left: 15px;
+      padding: 0;
+
+      li {
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        span {
+          border: none;
+          background-color: white;
+          color: lightgray;
+          margin-right: 20px;
+        }
+      }
+    }
+  }
+
+  .add-form {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0;
+    input {
+      width: 614px;
+      height: 58px;
+      outline: none;
+      border: 1px 0 1px 0 solid lightgray;
+    }
+
+    div {
+      position: absolute;
+      right: 10px;
+      bottom: 20px;
+    }
+
+    button {
+      border: 0;
+      outline: 0;
+    }
+  }
+
+  .main_right {
+    margin-left: 50px;
+    width: 293px;
+    height: 893px;
+
+    .main_right_avator_container {
+      display: flex;
+      align-items: center;
+      .main_right_avator_imgs {
+        height: 58px;
+        width: 58px;
+      }
+
+      .avator_img {
+        border-radius: 50%;
+        height: 56px;
+        width: 56px;
+        margin-top: 15px;
+      }
+
+      .avator_info {
+        margin-top: 25px;
+        margin-left: 15px;
+        font-size: 13px;
+      }
+    }
+  }
+}
