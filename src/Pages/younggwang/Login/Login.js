@@ -5,8 +5,8 @@ class Login extends Component {
   state = {
     userId: "",
     userPw: "",
-    idValue: false,
-    pwValue: false,
+    idCheck: false,
+    pwCheck: false,
     btnColor: "#ccdefc",
     setId: "rladudrhkd@naver.com",
     setPw: "123456789",
@@ -15,11 +15,11 @@ class Login extends Component {
   getIdValue = (e) => {
     this.setState({ userId: e.target.value });
     if (e.target.value.includes("@")) {
-      this.setState({ idValue: true }, () => {
+      this.setState({ idCheck: true }, () => {
         this.btnChange();
       });
     } else {
-      this.setState({ idValue: false }, () => {
+      this.setState({ idCheck: false }, () => {
         this.btnChange();
       });
     }
@@ -28,24 +28,22 @@ class Login extends Component {
   getPwValue = (e) => {
     this.setState({ userPw: e.target.value });
     if (e.target.value.length >= 5) {
-      this.setState({ pwValue: true }, () => this.btnChange());
+      this.setState({ pwCheck: true }, () => this.btnChange());
     } else {
-      this.setState({ pwValue: false }, () => this.btnChange());
+      this.setState({ pwCheck: false }, () => this.btnChange());
     }
   };
 
   btnChange = () => {
-    if (this.state.pwValue && this.state.idValue) {
-      this.setState({ btnColor: "#2d58da" });
-    } else {
-      this.setState({ btnColor: "#ccdefc" });
-    }
+    const {pwCheck,idCheck} = this.state;
+    this.setState({btnColor : pwCheck && idCheck ? "#2d58da" :"#ccdefc" })
   };
 
   goToMain = () => {
+    const {userId, userPw, setId, setPw} = this.state;
     if (
-      this.state.userId === this.state.setId &&
-      this.state.userPw === this.state.setPw
+      userId === setId &&
+      userPw === setPw
     ) {
       this.props.history.push("/main"); // 내가 이동하고 싶은 path의 경로
     } else if (this.state.userId !== this.state.setId) {
@@ -53,7 +51,7 @@ class Login extends Component {
     } else {
       alert("비밀번호가 틀렸습니다.");
     }
-  };
+  };  
 
   render() {
     return (
@@ -65,14 +63,14 @@ class Login extends Component {
           <input
             name="idInput"
             type="text"
-            id="loginEmail"
+            className="loginEmail"
             placeholder="전화번호, 사용자 이름 또는 이메일"
             onChange={this.getIdValue}
           ></input>
           <input
             name="pwInput"
             type="password"
-            id="loginPw"
+            className="loginPw"
             placeholder="비밀번호"
             onChange={this.getPwValue}
           ></input>

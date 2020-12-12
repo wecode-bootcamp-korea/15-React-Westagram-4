@@ -20,7 +20,7 @@ button {
     width: 910px;
     margin: 0, auto;
 
-    .nav_container {
+    .container {
       display: flex;
       justify-content: space-between;
       margin-top: 10px;
@@ -41,7 +41,7 @@ button {
           margin-left: 30px;
         }
       }
-      .nav_center {
+      .center {
         display: flex;
         align-items: center;
         position: relative;
@@ -61,7 +61,7 @@ button {
           height: 22px;
         }
       }
-      .nav_right {
+      .right {
         align-items: center;
         display: flex;
         padding-right: 24px;

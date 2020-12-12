@@ -7,8 +7,10 @@ class Main extends Component {
   constructor() {
     super();
     this.state = {
-      commentList: [],
-      comments : ""
+      commentList: [{
+        comments : "",
+      }],
+      
     };
   }
   
@@ -24,7 +26,6 @@ class Main extends Component {
         ...commentList,
         {
           id: commentList.length+1,
-          userName : 'user',
           comments : comments,
           isLike: false
         }
@@ -41,42 +42,41 @@ class Main extends Component {
 
 
   render() {
-    console.log(this.state.commentList.id)
 
     return (
       <>
         <header className="navHeader">
-          <nav className="nav_bar">
-            <div className="nav_container">
-              <div className="nav_left">
+          <nav className="navBar">
+            <div className="container">
+              <div className="left">
                 <div className="nav_icon">
                   <img
-                    src="../images/younggwang/logo.png"
                     alt="main_logo"
+                    src="../images/younggwang/logo.png"
                     className="nav_logo"
                   />
                 </div>
                 <div className="nav_titile">Westagram</div>
               </div>
-              <div className="nav_center">
-                <img src="../images/younggwang/search.png" alt="search" id="search" />
+              <div className="center">
+                <img alt="search" src="../images/younggwang/search.png" id="search" />
                 <input type="text" placeholder="검색" className="search_bar" />
               </div>
-              <div className="nav_right">
+              <div className="right">
                 <div className="nav_right_imgs">
                   <img
-                    src="../images/younggwang/explore.png"
                     alt="explore"
+                    src="../images/younggwang/explore.png"
                     className="nav_right_img"
                   />
                   <img
-                    src="../images/younggwang/heart.png"
                     alt="like"
+                    src="../images/younggwang/heart.png"               
                     className="nav_right_img"
                   />
                   <img
-                    src="../images/younggwang/profile.png"
                     alt="myprofile"
+                    src="../images/younggwang/profile.png"
                     className="nav_right_img"
                   />
                 </div>
@@ -90,8 +90,8 @@ class Main extends Component {
               <div className="story">
                 <div className="story_picture">
                   <img
-                    src="../images/younggwang/pangsu.jpg"
                     alt="story-img"
+                    src="../images/younggwang/pangsu.jpg"
                     className="story_img"
                   />
                 </div>
@@ -100,8 +100,8 @@ class Main extends Component {
               <div className="story">
                 <div className="story_picture">
                   <img
-                    src="../images/younggwang/pangsu.jpg"
                     alt="story-img"
+                    src="../images/younggwang/pangsu.jpg"
                     className="story_img"
                   />
                 </div>
@@ -114,8 +114,8 @@ class Main extends Component {
                   <div className="header_left">
                     <div className="feed_header_imgs">
                       <img
-                        src="../images/younggwang/face.jpeg"
                         alt="my-img"
+                        src="../images/younggwang/face.jpeg"                      
                         className="feed_header_img"
                       />
                     </div>
@@ -130,27 +130,27 @@ class Main extends Component {
               </div>
               <div className="feed_fictures">
                 <img
-                  src="../images/younggwang/pang.jpeg"
                   alt="feed-ficture"
+                  src="../images/younggwang/pang.jpeg"
                   className="feed_ficture"
                 />
               </div>
               <div className="feed_icons">
                 <div className="feed_ions_left">
                   <div>
-                    <img src="../images/younggwang/heart.png" alt="likeBtn" className="like" />
+                    <img alt="likeBtn" src="../images/younggwang/heart.png"  className="like" />
                   </div>
                   <div>
                     <img
-                      src="../images/younggwang/speechbubble.png"
                       alt="comment-btn"
+                      src="../images/younggwang/speechbubble.png"                    
                       className="content"
                     />
                   </div>
                   <div>
                     <img
-                      src="../images/younggwang/direct.png"
                       alt="direct-btn"
+                      src="../images/younggwang/direct.png"
                       className="comment"
                     />
                   </div>
@@ -194,8 +194,8 @@ class Main extends Component {
             <div className="main_right_avator_container">
               <div className="main_right_avator_imgs">
                 <img
-                  src="../images/younggwang/face.jpeg"
                   alt="face-img"
+                  src="../images/younggwang/face.jpeg"                 
                   className="avator_img"
                 />
               </div>
